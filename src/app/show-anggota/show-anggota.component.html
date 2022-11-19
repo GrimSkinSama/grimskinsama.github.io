@@ -1,0 +1,36 @@
+<!-- <div class="container">
+    <nav class="navbar navbar-expand-sm bg-light">
+        <a class="navbar-brand" href="#">Contact Page</a>
+        <button class="btn btn-primary">Add Member</button>
+    </nav>
+</div> -->
+
+<div class="container">
+    <nav class="navbar navbar-expand-sm bg-light">
+        <a class="navbar-brand" href="#">Contact Page - Total Members ({{Peoples.length}})</a>
+        <a class="btn btn-primary" routerLink="/addmember">Add Member</a>
+    </nav>
+</div>
+   
+<div class="container">
+    <div *ngFor="let mem of Peoples" class="card" style="margin-bottom: 50px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" class="card-img-top rounded-circle" alt="" style="height:100px; width:100px;">
+        <div  class="card-body">
+            <h3 class="card-title">{{mem.id}} - {{mem.name}}</h3>
+            <!-- <input type="text" value={{mem.id}} #idd/> -->
+            <h5 class="card-title">Phone : {{mem.phone}}</h5>
+            <p class="card-text">Skill : {{mem.skill}}</p>
+            <p class="card-text">About Me : {{mem.notes}}</p>
+        </div>
+        <div class="navbar">
+            <a class="btn btn-lg btn-secondary" routerLink="/detailmember/{{mem.id}}">View Details</a>
+            <button class="btn btn-lg btn-danger" (click)="removeAnggota(mem.id)">Remove {{mem.name}} from Members</button>
+        </div>
+        
+    </div>
+</div>
+
+<!-- <h3>Data From json-server</h3>
+<div *ngFor="let mem of Peoples">
+    {{mem.id}} {{mem.name}} {{mem.phone}} {{mem.skill}} {{mem.notes}}
+</div> -->

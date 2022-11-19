@@ -1,0 +1,27 @@
+<div class="container">
+    <h3>Detail Members of {{member.name}}</h3>
+    <hr>
+    <div class="form-group">
+        <form (ngSubmit)="onSubmit()" #kontakform ="ngForm">
+            <label for="id" class="form-label">ID : </label>
+            <input type="text" class="form-control" value={{member.id}} name="id" #id>
+
+            <label for="name" class="form-label">Name : </label>
+            <input type="text" class="form-control" value={{member.name}} name="name" #name>
+
+            <label for="phone" class="form-label">Phone : </label>
+            <input type="text" class="form-control" value={{member.phone}} name="phone" #phone>
+
+            <label for="skill" class="form-label">Skill : </label>
+            <input type="text" class="form-control" value={{member.skill}} name="skill" #skill>
+
+            <label for="desc" class="form-label">Description : </label>
+            <input type="text" class="form-control" value={{member.notes}}  name="notes" #notes>
+
+            <a class="btn btn-secondary" routerLink="/peoples">Back</a>
+            <button class="btn btn-secondary" style="margin-left: 50px;" (click)="updateMember( name.value, phone.value, skill.value, notes.value)">Save Changes</button>
+        </form>
+        
+    </div>
+
+</div>
